@@ -1,0 +1,109 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+* > *{
+    font-family: 'Poppins', sans-serif;
+}
+
+:root{
+    --color-dark: #35447C;
+    --color-secondary-dark: #8C94AF;
+    --color-light-gray: #C4C4CC;
+    --color-link: #4d4ddd;
+    --bg-color: #f3e887;
+    --bg-color-secondary: #fff6d7;
+}
+
+header{
+    display: flex;
+    justify-content: center;
+}
+
+#nav{
+    padding: 1em 3em;
+    background-color: var(--bg-color);
+    border-radius: 50px;
+    margin-top: 10em;
+}
+
+ul{
+    list-style-type: none;
+    display: flex;
+    gap: 2em;
+    padding: 0;
+}
+
+a{
+    text-decoration: none;
+}
+
+#nav .link{
+    display: flex;
+    align-self: center;
+    position: relative;
+}
+
+#nav .link .dropdown > .button{
+    display: flex;
+    border: none;
+    cursor: pointer;
+    color: var(--color-dark);
+    font-size: .9em;
+    background: transparent;
+}
+
+#nav .link .dropdown > .button:focus,
+#nav .link .dropdown > .button:hover{
+    color: var(--color-link);
+}
+
+#nav .link .dropdown > .button:focus + .info-grid{
+    opacity: 1;
+    transform: translateY(0px);
+}
+
+/* info grid style */
+#nav .link > .dropdown .info-grid{
+    background: var(--bg-color-secondary);
+    padding: 1em 2em;
+    border-radius: 5px;
+    position: absolute;
+    left: 0;
+    width: auto;
+    white-space: nowrap;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: transform 200ms ease-in-out, opacity 100ms ease-in-out;
+}
+
+#nav .link > .dropdown .info-grid .flex{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 1em;
+}
+
+#nav .link > .dropdown .info-grid .title{
+    color: var(--color-dark);
+}
+
+#nav .link > .dropdown .info-grid .flex a{
+    color: var(--color-dark);
+    font-size: .9em;
+}
+
+#nav .link > input{
+    border: none;
+    background: transparent;
+    padding: .7em 2em .7em .5em;
+    width: 300px;
+    color: var(--color-dark);
+}
+
+#nav .link > span.search{
+    margin-top: 8px;
+    color: var(--color-secondary-dark);
+}
+
+#nav .link input:focus{
+    outline: none;
+}
